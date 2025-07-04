@@ -1,29 +1,23 @@
 import {
 	IAuthenticateGeneric,
-	ICredentialTestRequest,
 	ICredentialType,
 	INodeProperties,
 } from 'n8n-workflow';
 
-export class HttpBinApi implements ICredentialType {
-	name = 'httpbinApi';
-	displayName = 'HttpBin API';
-	documentationUrl = 'https://your-docs-url';
+export class ZorusApi implements ICredentialType {
+	name = 'zorusApi';
+	displayName = 'Zorus API';
+	documentationUrl = 'https://developer.zorustech.com/api/docs/index.html';
 	properties: INodeProperties[] = [
 		{
-			displayName: 'Token',
+			displayName: 'API Token',
 			name: 'token',
 			type: 'string',
 			default: '',
 			typeOptions: {
 				password: true,
-			}
-		},
-		{
-			displayName: 'Domain',
-			name: 'domain',
-			type: 'string',
-			default: 'https://httpbin.org',
+			},
+			required: true,
 		},
 	];
 
@@ -35,16 +29,8 @@ export class HttpBinApi implements ICredentialType {
 		type: 'generic',
 		properties: {
 			headers: {
-				Authorization: '={{"Bearer " + $credentials.token}}',
+				Authorization: '={{"Impersonation " + $credentials.token}}',
 			},
-		},
-	};
-
-	// The block below tells how this credential can be tested
-	test: ICredentialTestRequest = {
-		request: {
-			baseURL: '={{$credentials?.domain}}',
-			url: '/bearer',
 		},
 	};
 }

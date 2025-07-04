@@ -36,7 +36,7 @@
   "n8n": {
     "n8nNodesApiVersion": 1,
     "credentials": [
-      "dist/credentials/ZorusCredentialsApi.credentials.js"
+      "dist/credentials/ZorusApi.credentials.js"
     ],
     "nodes": [
       "dist/nodes/ExampleNode/Zorus.node.js"

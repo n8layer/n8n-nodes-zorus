@@ -12,7 +12,7 @@ export class Zorus implements INodeType {
 		subtitle: '={{$parameter["operation"] + ": " + $parameter["resource"]}}',
 		description: 'Interact with Zorus API',
 		defaults: {
-			name: 'Sherweb',
+			name: 'Zorus',
 		},
 		inputs: [NodeConnectionType.Main],
 		outputs: [NodeConnectionType.Main],
