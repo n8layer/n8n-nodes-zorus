@@ -2,7 +2,7 @@
 
 This is an n8n community node. It lets you use Zorus in your n8n workflows.
 
-_App/service name_ is _one or two sentences describing the service this node integrates with_.
+Zorus is a cybersecurity company that provides hassle-free DNS filtering with behavioral analytics specifically designed for managed service providers (MSPs).
 
 [n8n](https://n8n.io/) is a [fair-code licensed](https://docs.n8n.io/reference/license/) workflow automation platform.
 
