@@ -4,13 +4,13 @@ import { customerOperations, customerFields } from './descriptions/CustomerDescr
 
 export class Zorus implements INodeType {
 	description: INodeTypeDescription = {
-		displayName: 'Sherweb',
-		name: 'sherweb',
-		icon: 'file:Sherweb.svg',
+		displayName: 'Zorus',
+		name: 'zorus',
+		icon: 'file:Zorus.svg',
 		group: ['transform'],
 		version: 1,
 		subtitle: '={{$parameter["operation"] + ": " + $parameter["resource"]}}',
-		description: 'Interact with Sherweb API',
+		description: 'Interact with Zorus API',
 		defaults: {
 			name: 'Sherweb',
 		},
@@ -19,7 +19,7 @@ export class Zorus implements INodeType {
 		usableAsTool: true,
 		credentials: [
 			{
-				name: 'sherwebOAuth2Api',
+				name: 'zorusApi',
 				required: true,
 			},
 		],
