@@ -1,5 +1,6 @@
 import {
 	IAuthenticateGeneric,
+	Icon,
 	ICredentialType,
 	INodeProperties,
 } from 'n8n-workflow';
@@ -7,6 +8,7 @@ import {
 export class ZorusApi implements ICredentialType {
 	name = 'zorusApi';
 	displayName = 'Zorus API';
+	icon = 'file:zorus.svg' as Icon;
 	documentationUrl = 'https://developer.zorustech.com/api/docs/index.html';
 	properties: INodeProperties[] = [
 		{
