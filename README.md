@@ -2,17 +2,17 @@
 
 This is an n8n community node. It lets you use Zorus in your n8n workflows.
 
-Zorus is a cybersecurity company that provides hassle-free DNS filtering with behavioral analytics specifically designed for managed service providers (MSPs).
+Zorus is a comprehensive endpoint security and management platform that provides advanced threat protection, policy management, and endpoint control capabilities for organizations.
+
+This node provides comprehensive operations for managing customers, deployment tokens, endpoints, groups, policies, and unblock requests through the Zorus API.
 
 [n8n](https://n8n.io/) is a [fair-code licensed](https://docs.n8n.io/reference/license/) workflow automation platform.
 
 [Installation](#installation)  
 [Operations](#operations)  
-[Credentials](#credentials)  <!-- delete if no auth needed -->  
+[Credentials](#credentials)  
 [Compatibility](#compatibility)  
-[Usage](#usage)  <!-- delete if not using this section -->  
-[Resources](#resources)  
-[Version history](#version-history)  <!-- delete if not using this section -->  
+[Resources](#resources)
 
 ## Installation
 
@@ -20,29 +20,59 @@ Follow the [installation guide](https://docs.n8n.io/integrations/community-nodes
 
 ## Operations
 
-_List the operations supported by your node._
+This node supports the following operations:
+
+### Customer
+- **Search Customers**: Retrieve a list of customers with optional filtering by name, UUID, enabled status, and creation date with pagination support
+- **Create Customer**: Create a new customer with a name and base policy UUID
+
+### Deployment Token
+- **Create Deployment Token**: Create a new deployment token for a specific group with a given name
+
+### Endpoint
+- **Search Endpoints**: Retrieve a list of endpoints with comprehensive filtering options including name, UUID, license ID, customer UUID, group UUID, agent state, and last seen date with pagination support
+- **Enable Endpoint**: Enable a specific endpoint by UUID
+- **Disable Endpoint**: Disable a specific endpoint by UUID
+- **Isolate Endpoint**: Isolate a specific endpoint by UUID for security purposes
+- **Release Endpoint**: Release an isolated endpoint by UUID
+- **Restart Service**: Restart the service on a specific endpoint by UUID
+
+### Group
+- **Groups Search**: Retrieve a list of groups with filtering options by name, UUID, policy UUID, customer UUID, and synchronization settings with pagination support
+- **Create Group**: Create a new group with a customer UUID, name, and optional base policy UUID
+
+### Policy
+- **Search Policy**: Retrieve a list of policies with filtering options by UUID, group UUID, group name, customer name, customer UUID, and creation date with pagination support
+
+### Unblock Request
+- **Unblock Request**: Search for active unblock requests with filtering options by customer UUID, policy UUID, logged-on user, and request date with pagination support
 
 ## Credentials
 
-_If users need to authenticate with the app/service, provide details here. You should include prerequisites (such as signing up with the service), available authentication methods, and how to set them up._
+To use this node, you'll need to set up API credentials with Zorus. Here's how:
+
+1. **Access your Zorus portal**:
+   - Log in to your Zorus admin portal
+   - Navigate to **API Settings** or **Developer Tools**
+
+2. **Generate API Token**:
+   - Create a new API token
+   - Copy the generated token
+
+3. **In n8n**:
+   - Create new credentials for "Zorus API"
+   - Enter the API Token from your Zorus portal
+   - The Base URL will default to: `https://developer.zorustech.com/api`
+   - Save the credentials
 
 ## Compatibility
 
-_State the minimum n8n version, as well as which versions you test against. You can also include any known version incompatibility issues._
-
-## Usage
-
-_This is an optional section. Use it to help users with any difficult or confusing aspects of the node._
-
-_By the time users are looking for community nodes, they probably already know n8n basics. But if you expect new users, you can link to the [Try it out](https://docs.n8n.io/try-it-out/) documentation to help them get started._
+This node is compatible with n8n version 1.82.0 and above.
 
 ## Resources
 
-* [n8n community nodes documentation](https://docs.n8n.io/integrations/#community-nodes)
-* _Link to app/service documentation._
-
-## Version history
-
-_This is another optional section. If your node has multiple versions, include a short description of available versions and what changed, as well as any compatibility impact._
+* [n8n community nodes documentation](https://docs.n8n.io/integrations/community-nodes/)
+* [Zorus](https://zorustech.com/)
+* [Zorus API Documentation](https://developer.zorustech.com/api/docs/index.html)
 
 
