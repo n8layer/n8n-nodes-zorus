@@ -1,6 +1,11 @@
 import { INodeType, INodeTypeDescription, NodeConnectionType } from 'n8n-workflow';
 
 import { customerOperations, customerFields } from './descriptions/CustomerDescription';
+import { deploymentTokenOperations, deploymentTokenFields } from './descriptions/DeploymentTokenDescription';
+import { groupFields, groupOperations } from './descriptions/GroupDescription';
+import { policyOperations, policyFields } from './descriptions/PolicyDescription';
+import { unblockRequestFields, unblockRequestOperations } from './descriptions/UnblockRequestDescription';
+import { endpointFields, endpointOperations } from './descriptions/EndpointDescription';
 
 export class Zorus implements INodeType {
 	description: INodeTypeDescription = {
@@ -69,6 +74,16 @@ export class Zorus implements INodeType {
 			// Operation
 			...customerOperations,
 			...customerFields,
+			...deploymentTokenOperations,
+			...deploymentTokenFields,
+			...groupOperations,
+			...groupFields,
+			...policyOperations,
+			...policyFields,
+			...unblockRequestOperations,
+			...unblockRequestFields,
+			...endpointOperations,
+			...endpointFields,
 		],
 	};
 }
